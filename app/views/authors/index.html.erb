@@ -1,0 +1,8 @@
+<h1><%= pluralize(@authors.count, 'author') %></h1>
+
+
+<% @authors.each do |author| %>
+  <p><%= link_to author.name, author %></p>
+<% end %>
+
+<%= link_to "Posts List", posts_path %>

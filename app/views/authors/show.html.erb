@@ -1,5 +1,15 @@
 <h1><%= @author.name %></h1>
-<p>Posts:</p>
+
+<h3>Posts:</h3>
 <% @author.posts.each do |post| %>
-  <div><%= post.title %></div>
+  <div><%= link_to post.title, post %></div>
 <% end %>
+<p>
+  <%= link_to "Author's Posts", author_posts_path(@author) %>
+</p>
+<p>
+  <%= link_to "Author's First Post", author_post_path(@author, @author.posts.first) %>
+</p>
+<p>
+  - <%= link_to "Back to Root", "/" %> -
+</p>
